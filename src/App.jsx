@@ -1,32 +1,135 @@
-import { useState } from 'react'
-import ValLogo from './assets/ValLogo.jpg'
-import Maps from './assets/Maps.png'
-import './App.css'
+import { useRef, useEffect } from 'react';
+import ValLogo from './assets/ValLogo.jpg';
+import Maps from './assets/Maps.png';
+import LinkedList from './assets/LinkedList.png';
+import Tree from './assets/Tree.png';
+import BubbleSort from './assets/BubbleSort.png';
+import SelectionSort from './assets/SelectionSort.png';
+import InsertionSort from './assets/InsertionSort.png';
+import './App.css';
+import './Writing.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const carouselRef = useRef(null);
+
+  const isDown = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleMouseDown = (e) => {
+    isDown.current = true;
+    startX.current = e.pageX - carouselRef.current.offsetLeft;
+    scrollLeft.current = carouselRef.current.scrollLeft;
+    carouselRef.current.style.cursor = "grabbing";
+  };
+
+  const handleMouseLeave = () => {
+    isDown.current = false;
+    carouselRef.current.style.cursor = "grab";
+  };
+
+  const handleMouseUp = () => {
+    isDown.current = false;
+    carouselRef.current.style.cursor = "grab";
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDown.current) return;
+    e.preventDefault();
+    const x = e.pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startX.current) * 2;
+    carouselRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+  const handleWheel = (e) => {
+    carouselRef.current.scrollLeft += e.deltaY;
+  };
+
+  useEffect(() => {
+    const container = carouselRef.current;
+    let frame;
+
+    const autoScroll = () => {
+      if (!isDown.current) {
+        container.scrollLeft += 0.5;
+
+        if (container.scrollLeft >= container.scrollWidth / 2) {
+          container.scrollLeft -= container.scrollWidth / 2;
+        }
+      }
+      frame = requestAnimationFrame(autoScroll);
+    };
+
+    frame = requestAnimationFrame(autoScroll);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  const logos = [
+    ValLogo,
+    Maps,
+    Tree,
+    LinkedList,
+    BubbleSort,
+    SelectionSort,
+    InsertionSort,
+  ];
+
+  const list = [
+    "Valorant Catalog",
+    "Hash Map",
+    "Binary Search Tree",
+    "Linked List",
+    "Bubble Sort",
+    "Selection Sort",
+    "Insertion Sort",
+  ];
 
   return (
-    <div className = "main-container">
-      <h1> href = "https://www.linkedin.com/in/jay-olivas-cox-031b66209/" className = 'outlinedTitle'>Jay Olivas Cox</h1>
-      <div className = 'row'>
-
-        <a href="https://github.com/JayOlivasCox/ValorantCharactersCatalog.github.io" target="_blank">
-          <img src={ValLogo} className="logo" alt="Valorant logo" />
-            <p className='picDesc'>Valorant Catalog</p>
+    <div className="main-container">
+      <div className="header">
+        <a
+          href="https://www.linkedin.com/in/jay-olivas-cox-031b66209/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="title">Jay Olivas Cox</span>
         </a>
-
-        <a href="https://github.com/JayOlivasCox/Map-Implementation" target="_blank">
-          <img src={Maps} className="logo" alt="Maps image" />
-          <p className='picDesc'>Map Implementation</p>
-        </a>
-
+        <p className="instructions">
+          Click on names or project images to expand.
+        </p>
       </div>
-      <p className="bottomMsg">
-        Click on the Images to see each project
-      </p>
+
+      <section className="projects-section">
+        <p className="projects">Projects</p>
+
+        <div
+          className="carousel"
+          ref={carouselRef}
+          onWheel={handleWheel}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+        >
+          <div className="track">
+            {[...logos, ...logos].map((logo, index) => (
+              <a key={index} href="#!" draggable="false">
+                <img
+                  src={logo}
+                  className="pics"
+                  alt="Project logo"
+                  draggable="false"
+                />
+                <p className="picDesc">
+                  {list[index % list.length]}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

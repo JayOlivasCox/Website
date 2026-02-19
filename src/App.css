@@ -5,23 +5,9 @@ html, body, #root {
   width: 100%;
 }
 
-.logo {
-  height: 9em;
-  padding: 1.5em;
-  padding-bottom: 0px;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
 .main-container {
-  min-height: 100vh;   /* ADD THIS */
-  background: 
+  min-height: 100vh;
+  background:
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url("./assets/raccoon.jpg");
   background-size: cover;
@@ -29,47 +15,46 @@ html, body, #root {
   background-repeat: no-repeat;
   color: white;
 }
-.outlinedTitle{
-  color: cyan;
-  text-shadow:
-       -1px -1px 0 black,
-        1px -1px 0 black,
-       -1px  1px 0 black,
-        1px  1px 0 black;
-  padding: 1em;
-  font-size: 3em;
-}
 
-.card {
-  padding: 1em;
-}
-
-.row {
+.header {
   display: flex;
-  gap: 20px;   /* spacing between items */
+  flex-direction: row;
+  align-items: flex-start;
+  padding-bottom: 2em;
 }
 
-.picDesc{
-  padding-top: 0px;
-  text-align: center;
-  display: inline;
-  font-size: 20px;
-  color: cyan;
-  text-shadow:
-       -1px -1px 0 black,
-        1px -1px 0 black,
-       -1px  1px 0 black,
-        1px  1px 0 black;
+.carousel {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  cursor: grab;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  align-items: center;
+}
+
+.pics {
+  height: 20em;
+  padding: 0 1.5em 0.7em 1.5em;
+  transition: filter 0.3s;
+}
+
+.pics:hover {
+  filter: drop-shadow(0 0 1em rgb(247, 112, 249));
 }
 
 a {
   display: flex;
-  flex-direction: column; /* stack image and text vertically */
-  align-items: center;    /* center horizontally */
-  text-decoration: none;  /* optional: remove underline */
-}
-
-.bottomMsg {
-  color: #888;
-  align-text: bottom;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
 }

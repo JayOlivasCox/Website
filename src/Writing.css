@@ -1,0 +1,42 @@
+.title {
+  color: cyan;
+  font-size: 4.6em;
+  text-align: left;
+  padding-left: .3em;
+  text-decoration: none;
+}
+.title:hover{
+  filter: drop-shadow(0 0 .3em rgb(247, 112, 249));
+}
+
+.instructions {
+  position:absolute;
+  align-self:right;
+  padding-left: 81%;
+  color: #888;
+}
+
+.projects{
+  color: cyan;
+  font-size: 2em;
+  text-align: left;
+  padding-left: .6em;
+}
+
+.picDesc{
+  padding-top: 0px;
+  text-align: center;
+  display: inline;
+  font-size: 20px;
+  color: cyan;
+  text-shadow:
+       -1px -1px 0 black,
+        1px -1px 0 black,
+       -1px  1px 0 black,
+        1px  1px 0 black;
+}
+.picDesc:hover{
+  filter:drop-shadow(0 0 .3em rgb(247, 112, 249));
+}
+
+
