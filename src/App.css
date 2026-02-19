@@ -1,13 +1,14 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .logo {
-  height: 6em;
+  height: 9em;
   padding: 1.5em;
+  padding-bottom: 0px;
   will-change: filter;
   transition: filter 300ms;
 }
@@ -18,25 +19,57 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-container {
+  min-height: 100vh;   /* ADD THIS */
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("./assets/raccoon.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.outlinedTitle{
+  color: cyan;
+  text-shadow:
+       -1px -1px 0 black,
+        1px -1px 0 black,
+       -1px  1px 0 black,
+        1px  1px 0 black;
+  padding: 1em;
+  font-size: 3em;
 }
 
 .card {
-  padding: 2em;
+  padding: 1em;
 }
 
-.read-the-docs {
+.row {
+  display: flex;
+  gap: 20px;   /* spacing between items */
+}
+
+.picDesc{
+  padding-top: 0px;
+  text-align: center;
+  display: inline;
+  font-size: 20px;
+  color: cyan;
+  text-shadow:
+       -1px -1px 0 black,
+        1px -1px 0 black,
+       -1px  1px 0 black,
+        1px  1px 0 black;
+}
+
+a {
+  display: flex;
+  flex-direction: column; /* stack image and text vertically */
+  align-items: center;    /* center horizontally */
+  text-decoration: none;  /* optional: remove underline */
+}
+
+.bottomMsg {
   color: #888;
+  align-text: bottom;
 }
