@@ -74,6 +74,16 @@ function App() {
     InsertionSort,
   ];
 
+  const projectLinks = [
+  "https://github.com/JayOlivasCox/ValorantCharactersCatalog.github.io",
+  "https://github.com/JayOlivasCox/Map-Implementation",
+  "https://github.com/JayOlivasCox/In-Class_BST",
+  "https://github.com/JayOlivasCox/Linked-Lists_In-Class",
+  "https://github.com/JayOlivasCox/Bubble-Sort-",
+  "https://github.com/JayOlivasCox/Selection-Sort",
+  "https://github.com/JayOlivasCox/Insertion-Sort"
+];
+
   const list = [
     "Valorant Catalog",
     "Hash Map",
@@ -113,12 +123,13 @@ function App() {
         >
           <div className="track">
             {[...logos, ...logos].map((logo, index) => (
-              <a key={index} href="#!" draggable="false">
+              <a key={index} href={projectLinks[index]} draggable="false" target="_blank">
                 <img
                   src={logo}
                   className="pics"
                   alt="Project logo"
                   draggable="false"
+
                 />
                 <p className="picDesc">
                   {list[index % list.length]}
