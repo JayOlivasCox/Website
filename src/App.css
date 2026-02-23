@@ -3,13 +3,14 @@ html, body, #root {
   padding: 0;
   height: 100%;
   width: 100%;
+  overflow-y: hidden;
 }
 
 .main-container {
-  min-height: 100vh;
+  height: 100vh;
   background:
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url("./assets/raccoon.jpg");
+    url("./assets/Background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -24,6 +25,7 @@ html, body, #root {
 }
 
 .carousel {
+  padding-top: 5em;
   overflow-x: auto;
   overflow-y: hidden;
   width: 100%;
@@ -36,6 +38,7 @@ html, body, #root {
 }
 
 .track {
+  height: 37em;
   display: flex;
   gap: 40px;
   width: max-content;
@@ -43,12 +46,16 @@ html, body, #root {
 }
 
 .pics {
-  height: 20em;
-  padding: 0 1.5em 0.7em 1.5em;
+  height: 25em;
+  padding: 0 1.2em 0.7em 1.2em;
   transition: filter 0.3s;
 }
+.title:hover{
+  filter: drop-shadow(0 0 .6em rgb(247, 112, 249));
+}
 
-.pics:hover {
+a:hover .pics,
+a:hover .picDesc {
   filter: drop-shadow(0 0 1em rgb(247, 112, 249));
 }
 
