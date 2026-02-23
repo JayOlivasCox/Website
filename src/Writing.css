@@ -1,27 +1,28 @@
+/* DESKTOP BASE */
 .title {
   color: cyan;
   font-size: 4.6em;
   text-align: left;
-  padding-left: .3em;
+  padding-left: 0.3em;
   text-decoration: none;
 }
 
 .instructions {
-  position:absolute;
-  align-self:right;
+  position: absolute;
+  right: 1%; /* cleaner than align-self:right */
   padding-left: 81%;
   color: #888;
 }
 
-.projects{
+.projects {
   color: cyan;
   position: fixed;
   font-size: 2.6em;
   text-align: left;
-  padding-left: .6em;
+  padding-left: 0.6em;
 }
 
-.picDesc{
+.picDesc {
   padding-top: 0px;
   text-align: center;
   display: inline;
@@ -34,5 +35,31 @@
         1px  1px 0 black;
 }
 
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5em; /* smaller title */
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
 
+  .instructions {
+    position: relative; /* stack naturally */
+    padding-left: 0;
+    text-align: center;
+    margin-top: 1em;
+  }
 
+  .projects {
+    font-size: 1.5em;
+    position: relative;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .picDesc {
+    font-size: 1.2em; /* smaller descriptions */
+    padding-top: 0.3em;
+  }
+}
