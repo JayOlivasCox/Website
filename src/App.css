@@ -1,3 +1,4 @@
+/* BASE STYLES (Desktop) */
 html, body, #root {
   margin: 0;
   padding: 0;
@@ -50,7 +51,8 @@ html, body, #root {
   padding: 0 1.2em 0.7em 1.2em;
   transition: filter 0.3s;
 }
-.title:hover{
+
+.title:hover {
   filter: drop-shadow(0 0 .6em rgb(247, 112, 249));
 }
 
@@ -64,4 +66,34 @@ a {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1em;
+  }
+
+  .carousel {
+    padding-top: 2em;
+  }
+
+  .track {
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .pics {
+    height: 15em; /* smaller images */
+    padding: 0.5em;
+  }
+
+  .main-container {
+    height: auto; /* let it expand for content */
+    background-size: cover;
+  }
 }
