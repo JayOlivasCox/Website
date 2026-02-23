@@ -3,7 +3,7 @@ import ValLogo from './assets/ValLogo.png';
 import Maps from './assets/Maps.png';
 import LinkedList from './assets/LinkedList.png';
 import Tree from './assets/Tree.png';
-import BubbleSort from './assets/bubbleSort.png';
+import BubbleSort from './assets/BubbleSort.png';
 import SelectionSort from './assets/SelectionSort.png';
 import InsertionSort from './assets/InsertionSort.png';
 import './App.css';
