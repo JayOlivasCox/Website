@@ -47,7 +47,7 @@ html, body, #root {
 }
 
 .pics {
-  height: 25em;
+  height: 23em;
   padding: 0 1.2em 0.7em 1.2em;
   transition: filter 0.3s;
 }
