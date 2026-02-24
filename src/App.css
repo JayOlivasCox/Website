@@ -26,7 +26,6 @@ html, body, #root {
 }
 
 .carousel {
-  padding-top: 4.9em;
   overflow-x: auto;
   overflow-y: hidden;
   width: 100%;
