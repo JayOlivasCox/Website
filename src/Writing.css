@@ -1,4 +1,8 @@
 /* DESKTOP BASE */
+*{
+  color: #00697b;
+}
+
 .title {
   color: cyan;
   font-size: 4.6em;
