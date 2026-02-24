@@ -51,7 +51,7 @@ function App() {
 
     const autoScroll = () => {
       if (!isDown.current) {
-        container.scrollLeft += 1;
+        container.scrollLeft += .6;
 
         if (container.scrollLeft >= container.scrollWidth / 2) {
           container.scrollLeft -= container.scrollWidth / 2;
