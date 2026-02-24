@@ -39,7 +39,7 @@ html, body, #root {
 }
 
 .track {
-  height: 33em;
+  height: 29em;
   display: flex;
   gap: 40px;
   width: max-content;
