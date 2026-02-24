@@ -22,7 +22,7 @@ html, body, #root {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding-bottom: 2em;
+  padding-bottom: 1.5em;
 }
 
 .carousel {
@@ -39,7 +39,7 @@ html, body, #root {
 }
 
 .track {
-  height: 37em;
+  height: 33em;
   display: flex;
   gap: 40px;
   width: max-content;
