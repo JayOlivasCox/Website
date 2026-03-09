@@ -3,7 +3,7 @@ import ValLogo from './assets/ValLogo.png';
 import Maps from './assets/Maps.png';
 import LinkedList from './assets/LinkedList.png';
 import Tree from './assets/Tree.png';
-import BubbleSort from './assets/BubbleSort.png';
+import SnapShowcase from './assets/snapLogo.jpg';
 import SelectionSort from './assets/SelectionSort.png';
 import InsertionSort from './assets/InsertionSort.png';
 import './App.css';
@@ -69,7 +69,7 @@ function App() {
     Maps,
     Tree,
     LinkedList,
-    BubbleSort,
+    SnapShowcase,
     SelectionSort,
     InsertionSort,
   ];
@@ -79,7 +79,7 @@ function App() {
   "https://github.com/JayOlivasCox/Map-Implementation",
   "https://github.com/JayOlivasCox/In-Class_BST",
   "https://github.com/JayOlivasCox/Linked-Lists_In-Class",
-  "https://github.com/JayOlivasCox/Bubble-Sort-",
+  "https://github.com/Snap-Engineering-Academy-2024/RacialJustice",
   "https://github.com/JayOlivasCox/Selection-Sort",
   "https://github.com/JayOlivasCox/Insertion-Sort"
 ];
@@ -89,9 +89,9 @@ function App() {
     "Hash Map",
     "Binary Search Tree",
     "Linked List",
-    "Bubble Sort",
+    "Snap Showcase Project",
     "Selection Sort",
-    "Insertion Sort",
+    "Insertion Sort"
   ];
 
   return (
