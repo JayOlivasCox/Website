@@ -123,7 +123,7 @@ function App() {
         >
           <div className="track">
             {[...logos, ...logos].map((logo, index) => (
-              <a key={index} href={projectLinks[index]} draggable="false" target="_blank">
+              <a key={index} href={projectLinks[index % list.length]} draggable="false" target="_blank">
                 <img
                   src={logo}
                   className="pics"
