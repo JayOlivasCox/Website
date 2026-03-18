@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import ValLogo from './assets/ValLogo.png';
 import Maps from './assets/Maps.png';
 import LinkedList from './assets/LinkedList.png';
@@ -7,7 +7,6 @@ import SnapShowcase from './assets/snapLogo.jpg';
 import SelectionSort from './assets/SelectionSort.png';
 import InsertionSort from './assets/InsertionSort.png';
 import './App.css';
-//import './Writing.css';
 
 function App() {
   const carouselRef = useRef(null);
@@ -15,6 +14,14 @@ function App() {
   const isDown = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
+
+  const [isPaused, setIsPaused] = useState(false);
+  const isPausedRef = useRef(false);
+
+  const togglePause = () => {
+    isPausedRef.current = !isPausedRef.current;
+    setIsPaused(isPausedRef.current);
+  };
 
   const handleMouseDown = (e) => {
     isDown.current = true;
@@ -50,8 +57,8 @@ function App() {
     let frame;
 
     const autoScroll = () => {
-      if (!isDown.current) {
-        container.scrollLeft += .6;
+      if (!isDown.current && !isPausedRef.current) {
+        container.scrollLeft += 0.6;
 
         if (container.scrollLeft >= container.scrollWidth / 2) {
           container.scrollLeft -= container.scrollWidth / 2;
@@ -75,14 +82,14 @@ function App() {
   ];
 
   const projectLinks = [
-  "https://github.com/JayOlivasCox/ValorantCharactersCatalog.github.io",
-  "https://github.com/JayOlivasCox/Map-Implementation",
-  "https://github.com/JayOlivasCox/In-Class_BST",
-  "https://github.com/JayOlivasCox/Linked-Lists_In-Class",
-  "https://github.com/Snap-Engineering-Academy-2024/RacialJustice",
-  "https://github.com/JayOlivasCox/Selection-Sort",
-  "https://github.com/JayOlivasCox/Insertion-Sort"
-];
+    "https://github.com/JayOlivasCox/ValorantCharactersCatalog.github.io",
+    "https://github.com/JayOlivasCox/Map-Implementation",
+    "https://github.com/JayOlivasCox/In-Class_BST",
+    "https://github.com/JayOlivasCox/Linked-Lists_In-Class",
+    "https://github.com/Snap-Engineering-Academy-2024/RacialJustice",
+    "https://github.com/JayOlivasCox/Selection-Sort",
+    "https://github.com/JayOlivasCox/Insertion-Sort"
+  ];
 
   const list = [
     "Valorant Catalog",
@@ -129,7 +136,6 @@ function App() {
                   className="pics"
                   alt="Project logo"
                   draggable="false"
-
                 />
                 <p className="picDesc">
                   {list[index % list.length]}
@@ -139,6 +145,10 @@ function App() {
           </div>
         </div>
       </section>
+
+      <button className="pause-btn" onClick={togglePause}>
+        {isPaused ? '▶ Resume' : '⏸ Pause'}
+      </button>
     </div>
   );
 }
