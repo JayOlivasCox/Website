@@ -228,6 +228,9 @@ a:hover .picDesc {
     overflow-x: hidden;
     overflow-y: auto;
     height: auto;
+    .pause-btn {
+      display: none;
+    }
   }
 
   .main-container {
