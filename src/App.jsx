@@ -8,7 +8,19 @@ import SelectionSort from './assets/SelectionSort.png';
 import InsertionSort from './assets/InsertionSort.png';
 import './App.css';
 
+function useWindowWidth() {
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  return width;
+}
+
 function App() {
+  const windowWidth = useWindowWidth();
+  const isMobile = windowWidth <= 768;
   const carouselRef = useRef(null);
 
   const isDown = useRef(false);
@@ -129,7 +141,7 @@ function App() {
           onMouseMove={handleMouseMove}
         >
           <div className="track">
-            {[...logos, ...logos].map((logo, index) => (
+            {(isMobile ? logos : [...logos, ...logos]).map((logo, index) => (
               <a key={index} href={projectLinks[index % list.length]} draggable="false" target="_blank">
                 <img
                   src={logo}
