@@ -7,7 +7,7 @@ import SnapShowcase from './assets/snapLogo.jpg';
 import SelectionSort from './assets/SelectionSort.png';
 import InsertionSort from './assets/InsertionSort.png';
 import './App.css';
-import './Writing.css';
+//import './Writing.css';
 
 function App() {
   const carouselRef = useRef(null);
