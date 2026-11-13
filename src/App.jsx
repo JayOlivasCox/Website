@@ -262,7 +262,7 @@ function App() {
                 </div>
               </div>
               <p className="bio">
-                I’m a third-year computer science student at Cal State Dominguez Hills. I like working on
+                I’m a computer science student at Cal State Dominguez Hills. I like working on
                 the parts of an app people don’t see: APIs, databases, and the logic that keeps data
                 correct. Most recently I built the Spring Boot backend for Salon Books, a bookkeeping app
                 for salon stylists.
