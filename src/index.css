@@ -198,6 +198,8 @@ h2 {
   color: var(--accent);
   font-size: clamp(1.6rem, 6.2vw, 3.5rem);
   white-space: nowrap;
+  font-size: clamp(1.6rem, 6.2vw, 3.5rem);
+  font-size: min(8cqi, 3.5rem);
 }
 
 .caret {
@@ -214,6 +216,10 @@ h2 {
   50% {
     opacity: 0;
   }
+}
+
+.hero-text {
+  container-type: inline-size;
 }
 
 .lead {
