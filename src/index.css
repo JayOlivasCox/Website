@@ -216,12 +216,6 @@ h2 {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .caret {
-    animation: none;
-  }
-}
-
 .lead {
   max-width: 34rem;
   margin: 1.5rem 0 0;

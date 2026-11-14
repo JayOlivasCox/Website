@@ -98,15 +98,10 @@ const classwork = [
 
 const projectCount = projects.length + classwork.length;
 
-const prefersReducedMotion = () =>
-  typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
 // Types each word out, pauses, deletes it, then moves to the next.
 function useTypewriter(words) {
-  const [text, setText] = useState(() => (prefersReducedMotion() ? words[0] : ''));
-
+  const [text, setText] = useState('');
   useEffect(() => {
-    if (prefersReducedMotion()) return;
     let word = 0;
     let chars = 0;
     let deleting = false;
